@@ -1,0 +1,13 @@
+.loaderText {
+  text-align: center;
+  color: #88bcec;
+  margin-bottom: 30px;
+}
+
+.loader.centered {
+  text-align: center;
+}
+
+.loaderContainer .loader .small {
+  height: 35px;
+}
