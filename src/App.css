@@ -68,6 +68,10 @@ main {
   width: 80vw;
 }
 
+.recuadro .recuadroContent {
+  padding: 0vw 3vw;
+}
+
 .recuadro .blueSection {
   margin-top: 15px;
   background-color: #88bcec;
@@ -94,6 +98,10 @@ main {
   margin: 15px 0px;
 }
 
+input.error {
+  border: 1px solid red;
+}
+
 button {
   padding: 8px 45px;
   border-radius: 10px;
@@ -113,6 +121,15 @@ button.blue {
   color: #88bcec;
 }
 
+button.red {
+  border: 1px solid red;
+  color: red;
+}
+
+button.noBorder {
+  border: none;
+}
+
 button.disabled {
   border: 1px solid #cccccc;
   color: #cccccc;
@@ -127,4 +144,10 @@ button.disabled {
 
 .message.large {
   font-size: 1.2em;
+}
+
+/* Multi-purpose */
+
+.margin-top-small {
+  margin-top: 20px;
 }

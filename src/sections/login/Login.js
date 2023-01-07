@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import Loader from "../loader/Loader";
-import albusClaseLogo from "../images/albus-clase-logo.png";
-import { accessAPI } from "../utils/fetchFunctions";
+import { useNavigate } from "react-router-dom";
+import Loader from "../../elements/loader/Loader";
+import albusClaseLogo from "../../images/albus-clase-logo.png";
+import { accessAPI } from "../../utils/fetchFunctions";
 
 export default function Login(props) {
   const [loader, setLoader] = useState(true);
@@ -18,9 +19,10 @@ export default function Login(props) {
   const materiaSelector = useRef(-1);
   const alumnoSelector = useRef(-1);
 
+  const navigate = useNavigate();
+
   // Cuando carga el componente, trae la lista de clases
   useEffect(() => {
-    console.log(props);
     accessAPI(
       "GET",
       "operacionesalumno/materia",
@@ -147,6 +149,9 @@ export default function Login(props) {
                           ? "confirm centered"
                           : "confirm centered disabled"
                       }
+                      onClick={() => {
+                        navigate(`/activity/${selectedAlumno}`);
+                      }}
                     >
                       Ingresar
                     </button>
@@ -154,8 +159,14 @@ export default function Login(props) {
                       <div className="message centered">
                         ¡Hey, no estoy en la lista!
                       </div>
-                      <button type="button" className="centered">
-                        Crear usuario
+                      <button
+                        type="button"
+                        className="centered"
+                        onClick={() => {
+                          navigate(`/register/${selectedMateria}`);
+                        }}
+                      >
+                        Registrarme
                       </button>
                     </div>
                   </>
@@ -171,10 +182,10 @@ export default function Login(props) {
                       type="button"
                       className="centered"
                       onClick={() => {
-                        props.history.push("/register");
+                        navigate(`/register/${selectedMateria}`);
                       }}
                     >
-                      Crear usuario
+                      Registrarme
                     </button>
                   </div>
                 )}

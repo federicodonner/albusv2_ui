@@ -1,6 +1,6 @@
 import "./loader.css";
-import loaderImage from "../images/loader.svg";
-import loaderSmallImage from "../images/loaderSmall.svg";
+import loaderImage from "../../images/loader.svg";
+import loaderSmallImage from "../../images/loaderSmall.svg";
 
 export default function Loader(props) {
   return (
